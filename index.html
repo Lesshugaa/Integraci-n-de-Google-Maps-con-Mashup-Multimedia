@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Actividad 13 — Google Maps + Mashup Multimedia</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Fuente e iconos opcionales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>🗺️🎶 Mashup: Google Maps + Multimedia</h1>
+    <p class="subtitle">PWD 7° 2° B — Interacción entre mapa, audio, video e imágenes</p>
+  </header>
+
+  <main class="layout">
+    <aside class="panel">
+      <section class="card">
+        <h2>Buscar lugar</h2>
+        <input id="search-input" type="text" placeholder="Escribe una dirección o lugar..." />
+        <p class="hint">Sugerencia: probá con “Obelisco, Buenos Aires”.</p>
+      </section>
+
+      <section class="card">
+        <h2>Lista de puntos y medios</h2>
+        <div id="poi-list" class="list"></div>
+      </section>
+
+      <section class="card">
+        <h2>Mashup Dock</h2>
+        <div id="dock">
+          <div id="dock-title">Selecciona un punto del mapa o de la lista</div>
+          <div id="dock-media"></div>
+          <div class="dock-controls">
+            <button id="btn-prev" title="Anterior"><i class="fa fa-backward"></i></button>
+            <button id="btn-play" title="Reproducir/Pausar"><i class="fa fa-play"></i></button>
+            <button id="btn-next" title="Siguiente"><i class="fa fa-forward"></i></button>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <section class="map-wrap card">
+      <div id="map" class="map" aria-label="Mapa de Google"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Actividad 13 — Google Maps + Mashup Multimedia. Uso educativo.</small>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Google Maps JS API (reemplaza YOUR_API_KEY por tu clave) -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=places"
+    async defer></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+:root{
+  --bg:#0e1320;
+  --fg:#eaf0ff;
+  --muted:#a9b3d1;
+  --card:#161b2f;
+  --border:#2a3150;
+  --accent:#7ba7ff;
+  --shadow:0 12px 36px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;
+  color:var(--fg);
+  background:
+    radial-gradient(1200px 800px at 10% -10%, #263063 0, transparent 55%),
+    radial-gradient(1200px 800px at 110% 120%, #213075 0, transparent 50%),
+    var(--bg);
+}
+
+.site-header{padding:24px 16px 8px;text-align:center}
+.site-header h1{margin:0;font-size:clamp(1.6rem,3.4vw,2.4rem)}
+.subtitle{margin:.25rem 0 0;color:var(--muted)}
+
+.layout{
+  display:grid;
+  grid-template-columns: 360px 1fr;
+  gap:16px;
+  max-width:1200px;
+  margin:0 auto;
+  padding:16px;
+}
+@media (max-width: 980px){
+  .layout{grid-template-columns: 1fr}
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:14px;
+}
+
+.panel{display:grid;gap:16px}
+
+.map-wrap{padding:0}
+.map{width:100%;height:72vh;border-radius:14px}
+
+h2{margin:.2rem 0 1rem;color:var(--accent);font-size:1.05rem}
+
+input[type="text"]{
+  width:100%;
+  padding:.7rem .9rem;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:#0d1333;
+  color:var(--fg);
+  outline:none;
+}
+.hint{color:var(--muted);font-size:.9rem;margin:.5rem 0 0}
+
+.list{display:flex;flex-direction:column;gap:10px;max-height:260px;overflow:auto}
+.poi{
+  display:grid;gap:.3rem;
+  border:1px dashed var(--border);
+  padding:.6rem .8rem;border-radius:12px;
+  cursor:pointer;background:#0f1430;
+}
+.poi:hover{filter:brightness(1.06)}
+.poi .title{font-weight:700}
+.poi .meta{color:var(--muted);font-size:.9rem}
+
+#dock{display:grid;gap:.6rem}
+#dock-title{font-weight:700}
+#dock-media{background:#0b1130;border:1px solid var(--border);border-radius:12px;min-height:180px;display:grid;place-items:center;padding:8px}
+#dock-media iframe, #dock-media img, #dock-media audio, #dock-media video{
+  max-width:100%;border-radius:12px;outline:none;border:none
+}
+.dock-controls{display:flex;gap:8px}
+.dock-controls button{
+  flex:1;padding:.6rem .8rem;border-radius:12px;background:#193076;border:1px solid #1d2f70;color:var(--fg);cursor:pointer;font-weight:600
+}
+.dock-controls button:hover{filter:brightness(1.07)}
+
+.site-footer{padding:16px;text-align:center;color:var(--muted)}
